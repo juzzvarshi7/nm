@@ -1,0 +1,206 @@
+<html>
+  <body>
+    <pre>
+### 1. **Fibonacci Series up to n Numbers**
+
+**Python**
+
+```python
+n = int(input("Enter number of terms: "))
+a, b = 0, 1
+for _ in range(n):
+    print(a, end=' ')
+    a, b = b, a + b
+```
+
+**Java**
+
+```java
+import java.util.Scanner;
+public class Fibonacci {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt(), a = 0, b = 1;
+        for (int i = 0; i < n; i++) {
+            System.out.print(a + " ");
+            int temp = a + b;
+            a = b;
+            b = temp;
+        }
+    }
+}
+```
+
+---
+
+### 2. **Prime Numbers till Entered Number**
+
+**Python**
+
+```python
+n = int(input("Enter a number: "))
+for num in range(2, n + 1):
+    if all(num % i != 0 for i in range(2, int(num**0.5)+1)):
+        print(num, end=' ')
+```
+
+**Java**
+
+```java
+import java.util.Scanner;
+public class PrimeTillN {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for (int i = 2; i <= n; i++) {
+            boolean prime = true;
+            for (int j = 2; j <= Math.sqrt(i); j++)
+                if (i % j == 0) prime = false;
+            if (prime) System.out.print(i + " ");
+        }
+    }
+}
+```
+
+---
+
+### 3. **Palindrome Check**
+
+**Python**
+
+```python
+s = input("Enter a string: ")
+print("Palindrome" if s == s[::-1] else "Not a palindrome")
+```
+
+**Java**
+
+```java
+import java.util.Scanner;
+public class Palindrome {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine(), rev = "";
+        for (int i = str.length() - 1; i >= 0; i--)
+            rev += str.charAt(i);
+        System.out.println(str.equals(rev) ? "Palindrome" : "Not a palindrome");
+    }
+}
+```
+
+---
+
+### 4. **Sum of n Numbers**
+
+**Python**
+
+```python
+n = int(input("Enter n: "))
+print("Sum =", n * (n + 1) // 2)
+```
+
+**Java**
+
+```java
+import java.util.Scanner;
+public class SumOfN {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println("Sum = " + (n * (n + 1) / 2));
+    }
+}
+```
+
+---
+
+### 5. **Matrix Addition**
+
+**Python**
+
+```python
+A = [[1, 2], [3, 4]]
+B = [[5, 6], [7, 8]]
+result = [[A[i][j] + B[i][j] for j in range(len(A[0]))] for i in range(len(A))]
+print("Sum:", result)
+```
+
+**Java**
+
+```java
+public class MatrixAdd {
+    public static void main(String[] args) {
+        int[][] A = {{1, 2}, {3, 4}}, B = {{5, 6}, {7, 8}}, sum = new int[2][2];
+        for (int i = 0; i < 2; i++)
+            for (int j = 0; j < 2; j++)
+                sum[i][j] = A[i][j] + B[i][j];
+        for (int[] row : sum) {
+            for (int val : row) System.out.print(val + " ");
+            System.out.println();
+        }
+    }
+}
+```
+
+---
+
+### 6. **Matrix Multiplication**
+
+**Python**
+
+```python
+A = [[1, 2], [3, 4]]
+B = [[5, 6], [7, 8]]
+result = [[sum(A[i][k] * B[k][j] for k in range(len(B))) for j in range(len(B[0]))] for i in range(len(A))]
+print("Product:", result)
+```
+
+**Java**
+
+```java
+public class MatrixMul {
+    public static void main(String[] args) {
+        int[][] A = {{1, 2}, {3, 4}}, B = {{5, 6}, {7, 8}}, result = new int[2][2];
+        for (int i = 0; i < 2; i++)
+            for (int j = 0; j < 2; j++)
+                for (int k = 0; k < 2; k++)
+                    result[i][j] += A[i][k] * B[k][j];
+        for (int[] row : result) {
+            for (int val : row) System.out.print(val + " ");
+            System.out.println();
+        }
+    }
+}
+```
+
+---
+
+### 7. **Factorial**
+
+**Python**
+
+```python
+n = int(input("Enter number: "))
+fact = 1
+for i in range(2, n + 1): fact *= i
+print("Factorial:", fact)
+```
+
+**Java**
+
+```java
+import java.util.Scanner;
+public class Factorial {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt(), fact = 1;
+        for (int i = 2; i <= n; i++) fact *= i;
+        System.out.println("Factorial: " + fact);
+    }
+}
+```
+
+
+    </pre>
+  </body>
+</html>
