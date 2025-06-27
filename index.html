@@ -200,7 +200,267 @@ public class Factorial {
 }
 ```
 
+PHP
+PHP LAB PROGRAMS
 
+PROGRAM 1
+
+<html> 
+
+<body>
+
+<h4>PHP program which adds up columns and rows of a given table</h4> 
+
+<form method="post"> 
+
+Enter the number of rows : <input type="number" name="m"><br><br>
+
+Enter the number of columns : <input type="number" name="n"><br><br>
+
+<input type="submit" name="submit" value="Submit"> 
+
+</form>
+
+<?php
+
+ $a=array(array()); 
+
+ if(isset($_POST['submit'])) 
+
+ { 
+
+ $m = $_POST['m']; 
+
+ $n = $_POST['n']; 
+
+ $x = 1;
+
+ for ($i = 0; $i < $m; $i++)
+
+ for ($j = 0; $j < $n; $j++)
+
+ { 
+
+ $a[$i][$j] = $x++;
+
+ }
+
+ echo("The Given Matrix is:<br><br>"); 
+
+ for($i = 0; $i < $m; $i++)
+
+ { 
+
+ for($j = 0; $j < $n; $j++)
+
+ echo ($a[$i][$j] . " ");
+
+ echo("<br>");
+
+ }
+
+ echo("<br>Sum of each column:<br><br>");
+
+ for( $i = 0; $i < $m; $i++)
+
+ {
+
+ $ColSum = 0;
+
+ for($j = 0; $j < $n; $j++)
+   {
+
+ $ColSum = $ColSum + $a[$j][$i];
+
+ }
+
+ echo("Sum of " . ($i+1) . " column: " . $ColSum);
+
+ echo("<br>");
+
+ }
+
+ echo("<br>Sum of each row:<br><br>");
+
+ for($i = 0; $i < $m; $i++)
+
+ {
+
+ $RowSum = 0;
+
+ for($j = 0; $j < $n; $j++)
+
+ {
+
+ $RowSum = $RowSum + $a[$i][$j];
+
+ }
+
+ echo("Sum of " . ($i+1) ." row: " . $RowSum);
+
+ echo("<br>");
+
+ }
+
+ }
+
+?>
+
+</body>
+
+</html>
+          PROGRAM 2
+
+<html> 
+
+<body> 
+
+<h4>Finding the Sum of Prime Numbers</h4>
+
+<form method="post"> 
+
+Enter the value of n:<input type="number" name="n"><br><br> 
+
+<input type="submit" name="submit" value="Sum Prime Numbers"><br><br> 
+
+</form> 
+
+<?php
+
+ if(isset($_POST['submit'])) 
+
+ { 
+
+ $n = $_POST['n']; 
+
+ $primes = array();
+
+ $is_prime_no = false;
+
+ for ($i = 2; $i<$n; $i++)
+
+ {
+
+ $is_prime_no = true; 
+
+ for ($j = 2; $j<=($i/2); $j++) 
+
+ {
+
+ if ($i%$j==0) 
+
+ {
+
+ $is_prime_no = false;
+
+ break;
+
+ }
+
+ }
+
+ if ($is_prime_no)
+
+ {
+
+ array_push($primes,$i);
+
+ }
+
+ if (count($primes)==$n)
+
+ {
+
+ break;
+
+ }
+
+ }
+
+ $S=array_sum($primes);
+
+ echo 'Sum of Prime Numbers=',$S;
+
+ }
+
+?>PROGRAM 2
+
+<html> 
+
+<body> 
+
+<h4>Finding the Sum of Prime Numbers</h4>
+
+<form method="post"> 
+
+Enter the value of n:<input type="number" name="n"><br><br> 
+
+<input type="submit" name="submit" value="Sum Prime Numbers"><br><br> 
+
+</form> 
+
+<?php
+
+ if(isset($_POST['submit'])) 
+
+ { 
+
+ $n = $_POST['n']; 
+
+ $primes = array();
+
+ $is_prime_no = false;
+
+ for ($i = 2; $i<$n; $i++)
+
+ {
+
+ $is_prime_no = true; 
+
+ for ($j = 2; $j<=($i/2); $j++) 
+
+ {
+
+ if ($i%$j==0) 
+
+ {
+
+ $is_prime_no = false;
+
+ break;
+
+ }
+
+ }
+
+ if ($is_prime_no)
+
+ {
+
+ array_push($primes,$i);
+
+ }
+
+ if (count($primes)==$n)
+
+ {
+
+ break;
+
+ }
+
+ }
+
+ $S=array_sum($primes);
+
+ echo 'Sum of Prime Numbers=',$S;
+
+ }
+
+?>
+  </body>
+
+</html>
     </pre>
   </body>
 </html>
